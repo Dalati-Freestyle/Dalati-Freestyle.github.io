@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Hardware Buddy</string>
+    <string name="title_activity_main">Hardware Buddy</string>
+    <string name="package_name">de.hardwarebuddy.com</string>
+    <string name="custom_url_scheme">de.hardwarebuddy.com</string>
+</resources>

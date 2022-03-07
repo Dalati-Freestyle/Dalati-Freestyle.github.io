@@ -1,0 +1,6 @@
+{
+	"appId": "de.hardwarebuddy.com",
+	"appName": "Hardware Buddy",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}
