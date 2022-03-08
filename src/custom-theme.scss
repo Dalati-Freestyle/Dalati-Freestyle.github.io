@@ -1,0 +1,70 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$md-leaguechest: (
+  50: #e3e4e4,
+  100: #b9bcbb,
+  200: #8b8f8e,
+  300: #5c6260,
+  400: #39413e,
+  500: #161f1c,
+  600: #131b19,
+  700: #101714,
+  800: #0c1211,
+  900: #060a09,
+  A100: #50ffff,
+  A200: #1dffff,
+  A400: #00e9e9,
+  A700: #00d0d0,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Hardware-Buddy-primary: mat.define-palette($md-leaguechest, 700);
+$Hardware-Buddy-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Hardware-Buddy-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$Hardware-Buddy-theme: mat.define-dark-theme((
+  color: (
+    primary: $Hardware-Buddy-primary,
+    accent: $Hardware-Buddy-accent,
+    warn: $Hardware-Buddy-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($Hardware-Buddy-theme);
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
