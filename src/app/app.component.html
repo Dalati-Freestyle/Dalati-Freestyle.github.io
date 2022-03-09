@@ -1,8 +1,19 @@
-<!-- <mat-sidenav-container class="example-container">
-  <mat-drawer-container class="example-container" autosize> -->
+<mat-drawer-container class="example-container" [hasBackdrop]="true">
+  <mat-drawer #drawer>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/buddys" (click)="drawer.toggle()">buddys</a>
+      <a mat-list-item routerLink="/hardware" (click)="drawer.toggle()">hardware</a>
+      <a mat-list-item routerLink="/settings" (click)="drawer.toggle()">
+        <mat-icon>settings</mat-icon>
+        <span> Settings</span>
+      </a>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
     <mat-toolbar>
       <div class="example-sidenav-content">
-        <!-- <button
+        <button
           mat-icon-button
           class="example-icon"
           aria-label="Example icon-button with menu icon"
@@ -11,7 +22,7 @@
           (click)="drawer.toggle()"
         >
           <mat-icon>menu</mat-icon>
-        </button> -->
+        </button>
       </div>
       <span>Hardware Buddy</span>
       <span class="example-spacer"></span>
@@ -29,15 +40,6 @@
         </button>
       </mat-menu>
     </mat-toolbar>
-
-    <!-- <mat-drawer #drawer class="example-sidenav" mode="side">
-      <mat-nav-list>
-        <a mat-list-item routerLink="/buddys">buddys</a>
-        <a mat-list-item routerLink="/hardware">hardware</a>
-        <a mat-list-item routerLink="/settings">settings</a>
-      </mat-nav-list> 
-    </mat-drawer> -->
-  <!-- </mat-drawer-container>
-</mat-sidenav-container> -->
-
-<router-outlet></router-outlet>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
