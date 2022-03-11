@@ -54,7 +54,7 @@ export interface Handy {
     model: string;
     brand: string;
     osVersion: string;
-    year: Date;
+    year: number;
 }
 
 export interface TV {
