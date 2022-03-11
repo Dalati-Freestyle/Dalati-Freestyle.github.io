@@ -152,6 +152,7 @@ export class AppDB extends Dexie {
                 exctensionCard: 'capture card',
             },
         ]);
+    
     }
 
 }
