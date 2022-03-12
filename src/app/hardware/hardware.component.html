@@ -1,0 +1,77 @@
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+                       <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          PC
+                        </mat-panel-title>
+                        <mat-panel-description>
+                          PC Panel Beschreibung
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+
+                      <mat-list>
+                          <mat-list-item *ngFor="let pc of pc$ | async; trackBy: identifyList">
+                              <mat-list>
+                                  <mat-list-item>
+                                    <h1 matLine >ID: {{ pc.id }}</h1>
+                                    <mat-divider></mat-divider>
+                                  </mat-list-item>
+                                  <mat-list-item>
+                                    <h1 matLine>Friend ID: {{ pc.friendId }}</h1>
+                                    <mat-divider></mat-divider>
+                                  </mat-list-item>
+                                  <mat-list-item>
+                                    <h1 matLine>Mainboard: {{ pc.mainboard }}</h1>
+                                    <mat-divider></mat-divider>
+                                  </mat-list-item>
+                                  <mat-list-item>
+                                    <h1 matLine>CPU: {{ pc.cpu }}</h1>
+                                    <mat-divider></mat-divider>
+                                  </mat-list-item>
+                                  <mat-list-item>
+                                    <h1 matLine>RAM: {{ pc.ram }}</h1>
+                                    <mat-divider></mat-divider>
+                                  </mat-list-item>
+                                  <mat-list-item>
+                                    <h1 matLine>{{ pc.gpu }}</h1>
+                                    <mat-divider></mat-divider>
+                                  </mat-list-item>
+                                  <mat-list-item>
+                                    <h1 matLine>{{ pc.mTwo }}</h1>
+                                    <mat-divider></mat-divider>
+                                  </mat-list-item>
+                                  <mat-list-item>
+                                    <h1 matLine>{{ pc.ssd }}</h1>
+                                    <mat-divider></mat-divider>
+                                  </mat-list-item>
+                                  <mat-list-item>
+                                    <h1 matLine>{{ pc.hdd }}</h1>
+                                    <mat-divider></mat-divider>
+                                  </mat-list-item>
+                                  <mat-list-item>
+                                    <h1 matLine>{{ pc.psu }}</h1>
+                                    <mat-divider></mat-divider>
+                                  </mat-list-item>
+                                  <mat-list-item>
+                                    <h1 matLine>{{ pc.case }}</h1>
+                                    <mat-divider></mat-divider>
+                                  </mat-list-item>
+                                  <mat-list-item>
+                                    <h1 matLine>{{ pc.fans }}</h1>
+                                    <mat-divider></mat-divider>
+                                  </mat-list-item>
+                                  <mat-list-item>
+                                    <h1 matLine>{{ pc.rgb }}</h1>
+                                    <mat-divider></mat-divider>
+                                  </mat-list-item>
+                                  <mat-list-item>
+                                    <h1 matLine>{{ pc.exctensionCard }}</h1>
+                                    <mat-divider></mat-divider>
+                                  </mat-list-item>
+                              </mat-list>
+                          </mat-list-item>
+                        </mat-list>
+    </mat-expansion-panel>
+
+</mat-accordion>

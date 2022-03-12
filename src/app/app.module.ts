@@ -14,6 +14,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatExpansionModule} from '@angular/material/expansion';
 import { BuddysComponent } from './buddys/buddys.component';
 import { HardwareComponent } from './hardware/hardware.component';
 import { SettingsComponent } from './settings/settings.component';
@@ -21,7 +23,6 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatFormFieldModule,
     MatCardModule,
     MatInputModule,
-    MatDividerModule
+    MatDividerModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

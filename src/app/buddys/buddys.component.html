@@ -2,7 +2,7 @@
 
 <mat-nav-list>
     <mat-list-item *ngFor="let friend of friends$ | async; trackBy: identifyList">
-       <h1 matLine href="...">{{ friend.name }}</h1>
+       <a matLine routerLink="hardware/{{friend.id}}">{{ friend.name }}</a>
        <mat-divider></mat-divider>
     </mat-list-item>
   </mat-nav-list>

@@ -1,6 +1,7 @@
 import { Component, OnInit, VERSION } from '@angular/core';
 import { liveQuery } from 'dexie';
 import { db, Friend,  PC, Audio, Handy, TV, Console, Printer, Monitor, Periphaerie } from 'src/db/db';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
 
 
@@ -14,8 +15,13 @@ import { FormBuilder, Validators, FormControl } from '@angular/forms';
 
 export class HardwareComponent implements OnInit {
 
-  friendId: number = 1;
-  pc$ = liveQuery(() => db.pcs.where('id').equals(this.friendId).toArray());
+  constructor(private router: Router, 
+    private activatedRoute: ActivatedRoute) { }
+
+  id: number = 0;
+  pc$ = liveQuery(() => db.pcs.where('id').equals(this.id).toArray());
+  panelOpenState = false;
+
 
   friend: Friend = {
     id: 0,
@@ -114,6 +120,26 @@ periphaerie: Periphaerie = {
   
 
   ngOnInit(): void {
+    if(this.router.url != 'new-hardware'){
+      this.id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+    }
+  }
+
+  identifyList(index: number, list: PC) {
+    return `${list.id}
+    ${list.friendId}
+    ${list.mainboard}
+    ${list.cpu}
+    ${list.ram}
+    ${list.gpu}
+    ${list.mTwo}
+    ${list.ssd}
+    ${list.hdd}
+    ${list.psu}
+    ${list.case}
+    ${list.fans}
+    ${list.rgb}
+    ${list.exctensionCard}`;
   }
 
 }

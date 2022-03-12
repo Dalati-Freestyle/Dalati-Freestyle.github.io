@@ -12,7 +12,10 @@ const routes: Routes = [
     path: 'buddys', component: BuddysComponent
   },
   {
-    path: 'hardware', component: HardwareComponent
+    path: 'new-hardware', component: HardwareComponent
+  },
+  {
+    path: 'buddys/hardware/:id', component: HardwareComponent
   },
   {
     path: 'settings', component: SettingsComponent
